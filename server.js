@@ -6,10 +6,12 @@ app.use(express.json());
 
 app.post("/webhook", (req, res) => {
 
+    // RESPOND IMMEDIATELY
+    res.sendStatus(200);
+
+    // LOG AFTER RESPONSE
     console.log("Webhook received:");
     console.log(req.body);
-
-    res.send("OK");
 });
 
 app.get("/", (req, res) => {
